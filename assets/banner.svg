@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="Surf Cafe PC Store: tú creas tus sueños, nosotros los ensamblamos">
+  <defs>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#21E14B"/>
+      <stop offset="0.45" stop-color="#E6FF00"/>
+      <stop offset="1" stop-color="#00F0FF"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity="0.28"/>
+    </pattern>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#21E14B" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vig" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.65"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .mono{font-family:'Courier New',Consolas,Menlo,monospace}
+      .cur{animation:blink 1.05s steps(1) infinite}
+      @keyframes blink{50%{opacity:0}}
+      .flick{animation:flick 6s linear infinite}
+      @keyframes flick{0%,92%,100%{opacity:1}93%{opacity:.82}95%{opacity:1}97%{opacity:.9}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="380" rx="14" fill="#0A0D12"/>
+  <rect width="1200" height="380" rx="14" fill="url(#grid)"/>
+
+  <!-- barra de título de la ventana -->
+  <rect x="0" y="0" width="1200" height="44" rx="14" fill="#1A1F29"/>
+  <rect x="0" y="30" width="1200" height="14" fill="#1A1F29"/>
+  <circle cx="28" cy="22" r="7" fill="#FF00A8"/>
+  <circle cx="52" cy="22" r="7" fill="#E6FF00"/>
+  <circle cx="76" cy="22" r="7" fill="#21E14B"/>
+  <text x="600" y="28" text-anchor="middle" class="mono" font-size="15" fill="#7C8794">surfcafe@manzanillo: ~/taller — bash</text>
+  <text x="1172" y="28" text-anchor="end" class="mono" font-size="13" fill="#3A4049">80x24</text>
+
+  <g class="flick">
+    <!-- log de arranque -->
+    <text x="40" y="84" class="mono" font-size="15" fill="#21E14B">[ <tspan fill="#E6FF00">OK</tspan> ] boot.diagnostico ........ temperaturas, voltajes y SMART</text>
+    <text x="40" y="106" class="mono" font-size="15" fill="#21E14B">[ <tspan fill="#E6FF00">OK</tspan> ] pasta.termica ........... -15 a -25 grados en carga</text>
+    <text x="40" y="128" class="mono" font-size="15" fill="#21E14B">[ <tspan fill="#00F0FF">..</tspan> ] ensamblando.sueños ........ cargando</text>
+
+    <!-- título -->
+    <text x="600" y="228" text-anchor="middle" class="mono" font-size="112" font-weight="700" fill="url(#sweep)" filter="url(#glow)" letter-spacing="4">SURF CAFE</text>
+    <text x="600" y="268" text-anchor="middle" class="mono" font-size="22" fill="#00F0FF" letter-spacing="9">PC STORE · TIENDA · TALLER · RASTREO</text>
+
+    <!-- prompt -->
+    <text x="40" y="338" class="mono" font-size="20" fill="#21E14B">$ <tspan fill="#E8EDF2">tú_creas_tus_sueños &amp;&amp; nosotros_los_ensamblamos</tspan></text>
+    <rect class="cur" x="640" y="321" width="12" height="22" fill="#21E14B"/>
+  </g>
+
+  <text x="1160" y="338" text-anchor="end" class="mono" font-size="14" fill="#7C8794">MANZANILLO, COL. · +15 AÑOS</text>
+
+  <!-- CRT: líneas de barrido y viñeta -->
+  <rect width="1200" height="380" rx="14" fill="url(#scan)"/>
+  <rect width="1200" height="380" rx="14" fill="url(#vig)"/>
+  <rect x="1" y="1" width="1198" height="378" rx="13" fill="none" stroke="#21E14B" stroke-opacity="0.35"/>
+</svg>
