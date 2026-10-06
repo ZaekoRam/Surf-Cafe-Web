@@ -25,9 +25,7 @@
 <a href="#modulos"><img src="https://img.shields.io/badge/02-MÓDULOS-E6FF00?style=flat-square&labelColor=0A0D12" alt="Módulos"></a>
 <a href="#specs"><img src="https://img.shields.io/badge/03-SPECS-00F0FF?style=flat-square&labelColor=0A0D12" alt="Especificaciones"></a>
 <a href="#arquitectura"><img src="https://img.shields.io/badge/04-ARQUITECTURA-FF00A8?style=flat-square&labelColor=0A0D12" alt="Arquitectura"></a>
-<a href="#instalacion"><img src="https://img.shields.io/badge/05-INSTALACIÓN-21E14B?style=flat-square&labelColor=0A0D12" alt="Instalación"></a>
-<a href="#seguridad"><img src="https://img.shields.io/badge/06-SEGURIDAD-E6FF00?style=flat-square&labelColor=0A0D12" alt="Seguridad"></a>
-<a href="#creditos"><img src="https://img.shields.io/badge/07-CRÉDITOS-00F0FF?style=flat-square&labelColor=0A0D12" alt="Créditos"></a>
+<a href="#creditos"><img src="https://img.shields.io/badge/05-CRÉDITOS-00F0FF?style=flat-square&labelColor=0A0D12" alt="Créditos"></a>
 
 <br><br>
 
@@ -138,60 +136,9 @@ Tablas principales: `products`, `repairs`, `orders`, `appointments`, `profiles`,
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-<a name="instalacion"></a>
-
-## `[05]` // INSTALACIÓN
-
-```bash
-git clone https://github.com/ZaekoRam/Surf-Cafe-Web.git
-cd Surf-Cafe-Web
-npm install
-cp .env.example .env.local      # en Windows: copy .env.example .env.local
-npm run dev                     # http://localhost:3000
-```
-
-Variables que el sitio necesita en `.env.local`:
-
-| Variable | Para qué sirve |
-|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | URL de tu proyecto de Supabase |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Llave pública (`anon`); la protección real son las políticas RLS |
-| `NEXT_PUBLIC_SITE_URL` | URL pública del sitio |
-| `NEXT_PUBLIC_WHATSAPP` | Número de WhatsApp del negocio |
-
-> [!WARNING]
-> Nunca pongas la llave `service_role` de Supabase en el código del sitio ni en variables `NEXT_PUBLIC_*`. Esa llave es solo de servidor.
-
-Scripts útiles:
-
-```bash
-npm run typecheck          # revisa tipos
-npm run build              # genera /out
-npm run build:hostinger    # build + copia a public_html/ lista para subir
-```
-
-La guía de despliegue en Hostinger está en [`DEPLOY_HOSTINGER.md`](DEPLOY_HOSTINGER.md) y las notas técnicas del proyecto en [`docs/DOCUMENTACION-TECNICA.md`](docs/DOCUMENTACION-TECNICA.md).
-
-<img src="assets/divider.svg" width="100%" alt="">
-
-<a name="seguridad"></a>
-
-## `[06]` // SEGURIDAD
-
-```bash
-$ sudo cat /etc/surfcafe/seguridad.log
-```
-
-- El sitio se exporta como **estático**, así que no hay servidor ni middleware que bloquee la descarga del HTML de `/admin`.
-- Lo que protege los datos es **Supabase Auth + Row Level Security**: sin una sesión con rol `admin` o `tecnico` en `profiles`, las consultas del panel regresan vacías (`is_staff()`).
-- Las variables `NEXT_PUBLIC_*` se incluyen en el JavaScript al compilar. Cambiarlas implica volver a compilar y subir `/out`.
-- Este repositorio **no incluye** `.env`, llaves ni datos de clientes.
-
-<img src="assets/divider.svg" width="100%" alt="">
-
 <a name="creditos"></a>
 
-## `[07]` // CRÉDITOS Y LICENCIA
+## `[05]` // CRÉDITOS Y LICENCIA
 
 - Diseño, desarrollo y panel de administración: **Carlo Ramirez** ([@ZaekoRam](https://github.com/ZaekoRam)).
 - Modelos 3D de [Sketchfab](https://sketchfab.com), todos con licencia CC-BY-4.0:
@@ -204,10 +151,7 @@ Este código se muestra como parte de mi portafolio. No incluye licencia de reut
 
 <div align="center">
 
-```bash
-$ exit
-logout — gracias por pasar por el taller.
-```
+<sub><code>$ exit</code> &nbsp;·&nbsp; logout — gracias por pasar por el taller.</sub>
 
 [![VISITAR EL SITIO](https://img.shields.io/badge/VISITAR-EL%20SITIO-21E14B?style=for-the-badge&labelColor=0A0D12)](https://darkred-curlew-858904.hostingersite.com)
 
